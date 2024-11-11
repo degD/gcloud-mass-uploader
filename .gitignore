@@ -1,0 +1,5 @@
+env/
+testdir/
+files.json
+progress
+skipped_files.json
