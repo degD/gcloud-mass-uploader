@@ -15,7 +15,9 @@ def upload_file(albums, filepath, remote_name):
     "Real function for uploading"
 
     # Save image to album.
-    album_name = filepath.split(r"/")[1]
+    album_name: str = filepath.split(r"/")[1]
+    if "." in album_name: 
+        album_name: str = filepath.split(r"/")[0]
     albums.append(album_name)
     if subprocess.run(["rclone", "copy", filepath, f"{remote_name}:album/'{album_name}'"], capture_output=True).returncode != 0:
         raise FileNotFoundError
