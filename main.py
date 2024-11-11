@@ -1,3 +1,7 @@
+# Made by Dege
+# Use to mass-upload data from local to google photos.
+# Replace string <remote = "gphotos"> with created rclone remote name. 
+
 from pathlib import Path
 import subprocess
 import time
